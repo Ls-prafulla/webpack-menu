@@ -16,18 +16,18 @@ const htmlPageNames = [
       pageName: 'index.html',
       title: 'Club Mahindra'
   }, 
-  // {
-  //   pageName: 'detail.html',
-  //   title: 'Club Mahindra'
-  // },
-  // {
-  //   pageName: 'category-listing.html',
-  //   title: 'Club Mahindra'
-  // },
-  // {
-  //   pageName: 'individual.html',
-  //   title: 'Club Mahindra'
-  // }, 
+  {
+    pageName: 'detail.html',
+    title: 'Club Mahindra'
+  },
+  {
+    pageName: 'category-listing.html',
+    title: 'Club Mahindra'
+  },
+  {
+    pageName: 'individual.html',
+    title: 'Club Mahindra'
+  }, 
 ];
 let htmlFileName = htmlPageNames.map(htmlPage=> htmlPage.pageName);
 let multipleHtmlPlugins = htmlPageNames.map(name => {
@@ -169,11 +169,11 @@ module.exports = (env, argv) => ({
       location:'header',
       template_filename: htmlFileName
     }),
-    // new HtmlWebpackPartialsPlugin({
-    //     path:path.join(__dirname,'./src/footer.html'),
-    //     location:'footer',
-    //     template_filename: htmlFileName
-    // }),
+    new HtmlWebpackPartialsPlugin({
+        path:path.join(__dirname,'./src/footer.html'),
+        location:'footer',
+        template_filename: htmlFileName
+    }),
     new webpack.ProvidePlugin({
       $: "jquery",
       jQuery: "jquery",
